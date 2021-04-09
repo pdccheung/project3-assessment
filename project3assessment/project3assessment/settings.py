@@ -10,6 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+
+import os #<-----environment variables 
+import environ #<-----environment variables 
+environ.Env() #<-----environment variables 
+environ.Env.read_env() #<-----environment variables 
+
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # Application definition
 
